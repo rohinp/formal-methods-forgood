@@ -1,6 +1,8 @@
 package propertytesting
 
 import banking.withdraw
+import banking.Balance
+import banking.WithdrawalAmount
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.property.Arb
 import io.kotest.property.arbitrary.int
@@ -17,18 +19,18 @@ class WithdrawPropertyTest : FunSpec({
         checkAll(nonNegativeAmount, nonNegativeAmount) { remaining, amount ->
             val balance = remaining + amount
 
-            val newBalance = withdraw(balance, amount)
+            val newBalance = withdraw(Balance(balance), WithdrawalAmount(amount))
 
-            assertEquals(remaining, newBalance)
-            assertEquals(balance, newBalance + amount)
-            assertTrue(newBalance >= 0)
+            assertEquals(Balance(remaining), newBalance)
+            assertEquals(balance, newBalance.value + amount)
+            assertTrue(newBalance.value >= 0)
         }
     }
 
     test("an overdraft is always rejected") {
         checkAll(nonNegativeAmount, positiveAmount) { balance, extra ->
             assertFailsWith<IllegalArgumentException> {
-                withdraw(balance, balance + extra)
+                withdraw(Balance(balance), WithdrawalAmount(balance + extra))
             }
         }
     }

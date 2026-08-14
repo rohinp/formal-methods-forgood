@@ -28,13 +28,17 @@ The caller is responsible for preconditions. The function is responsible for
 postconditions. Runtime checks detect violations only on paths that actually
 execute; they do not prove the rule for every possible input.
 
+After [lesson 3](03-domain-modeling-with-types.md), non-negativity is enforced
+when `Balance` and `WithdrawalAmount` values are constructed. The remaining
+operation-level precondition is `amount <= balance`.
+
 ## Language choices
 
 ### Python
 
-Python conventionally reports invalid arguments with exceptions, so the example
-raises `ValueError`. It raises `AssertionError` if its own postcondition fails.
-Type hints describe the intended types but do not enforce them at runtime.
+Python conventionally reports an overdraft with `ValueError`. It raises
+`AssertionError` if its own postcondition fails. The domain wrappers validate
+non-negativity when constructed.
 
 [Implementation](../python/src/banking/withdraw.py) ·
 [Tests](../python/tests/contracts/test_withdraw.py) ·
@@ -42,10 +46,10 @@ Type hints describe the intended types but do not enforce them at runtime.
 
 ### Scala 3
 
-The Scala example returns `Either[WithdrawalError, Int]`. Invalid input is
+The Scala example returns `Either[WithdrawalError, Balance]`. An overdraft is
 therefore visible in the return type and can be composed with `map`, `flatMap`,
-or a `for` expression without throwing. The postcondition uses `ensuring`: if it
-fails, the implementation itself is defective, so an assertion failure is
+or a `for` expression without throwing. The postcondition uses `ensuring`: if
+it fails, the implementation itself is defective, so an assertion failure is
 appropriate.
 
 [Implementation](../scala/src/main/scala/banking/Withdraw.scala) ·
@@ -55,11 +59,11 @@ appropriate.
 
 ### Kotlin
 
-Kotlin's standard `require` is the conventional check for invalid function
-arguments and `check` is used for invalid program state. They also help the
-compiler's data-flow analysis. Kotlin's `Result` is useful at API boundaries
-that intentionally capture failures, but wrapping every programmer mistake in
-`Result` would make the example less idiomatic.
+Kotlin's standard `require` checks the overdraft precondition and `check` checks
+postconditions. The domain value classes validate non-negativity during
+construction. Kotlin's `Result` can be useful at API boundaries that capture
+expected failures, but wrapping every programmer mistake in `Result` would make
+this small example less idiomatic.
 
 [Implementation](../kotlin/src/main/kotlin/banking/Withdraw.kt) ·
 [Tests](../kotlin/src/test/kotlin/contracts/WithdrawTest.kt) ·

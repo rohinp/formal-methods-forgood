@@ -9,6 +9,7 @@ focuses on what guarantee a technique buys in ordinary code.
 - [Learning roadmap](ROADMAP.md)
 - [01 — Contracts](01-contracts.md)
 - [02 — Property-based testing](02-property-based-testing.md)
+- [03 — Domain modeling with types](03-domain-modeling-with-types.md)
 
 Each completed technique should include:
 
@@ -28,14 +29,17 @@ places in every language:
 python/src/banking/                 Python production code
 python/tests/contracts/             Python contract tests
 python/tests/propertytesting/       Python property tests
+python/tests/domainmodeling/         Python domain-model tests
 
 scala/src/main/scala/banking/       Scala production code
 scala/src/test/scala/contracts/      Scala contract tests
 scala/src/test/scala/propertytesting/
+scala/src/test/scala/domainmodeling/
 
 kotlin/src/main/kotlin/banking/     Kotlin production code
 kotlin/src/test/kotlin/contracts/    Kotlin contract tests
 kotlin/src/test/kotlin/propertytesting/
+kotlin/src/test/kotlin/domainmodeling/
 ```
 
 The extra `main/scala`, `test/scala`, `main/kotlin`, and `test/kotlin` levels are

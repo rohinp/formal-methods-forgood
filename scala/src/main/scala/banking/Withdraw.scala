@@ -2,19 +2,24 @@ package banking
 
 object Withdraw:
   enum WithdrawalError:
-    case NegativeBalance
-    case NegativeAmount
     case AmountExceedsBalance
 
-  def withdraw(balance: Int, amount: Int): Either[WithdrawalError, Int] =
-    if balance < 0 then Left(WithdrawalError.NegativeBalance)
-    else if amount < 0 then Left(WithdrawalError.NegativeAmount)
-    else if amount > balance then Left(WithdrawalError.AmountExceedsBalance)
+  def withdraw(
+      balance: Balance,
+      amount: WithdrawalAmount
+  ): Either[WithdrawalError, Balance] =
+    if amount.value > balance.value then Left(WithdrawalError.AmountExceedsBalance)
     else
-      val newBalance = balance - amount
+      val rawNewBalance = balance.value - amount.value
 
       // A failed postcondition is an implementation defect, not a domain error.
-      Right(
-        newBalance.ensuring(_ >= 0, "result must be non-negative")
-          .ensuring(_ == balance - amount, "result must equal balance - amount")
-      )
+      val checked = rawNewBalance
+        .ensuring(_ >= 0, "result must be non-negative")
+        .ensuring(
+          _ == balance.value - amount.value,
+          "result must equal balance - amount"
+        )
+
+      Balance.from(checked) match
+        case Right(newBalance) => Right(newBalance)
+        case Left(_) => throw AssertionError("postcondition failed: invalid balance")
