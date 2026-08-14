@@ -1,0 +1,29 @@
+# Operating system and editors
+.DS_Store
+.idea/
+.vscode/
+*.iml
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Scala / sbt
+.bsp/
+.bloop/
+.metals/
+.scala-build/
+target/
+project/target/
+
+# Kotlin / Gradle
+.gradle/
+.kotlin/
+kotlin/build/
