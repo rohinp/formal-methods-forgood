@@ -25,6 +25,7 @@ external references, and instructions for running the examples.
 - [Lesson 02 — Property-based testing](wiki/02-property-based-testing.md)
 - [Lesson 03 — Domain modeling with types](wiki/03-domain-modeling-with-types.md)
 - [Lesson 04 — Data and class invariants](wiki/04-data-and-class-invariants.md)
+- [Lesson 05 — State-machine and model-based testing](wiki/05-state-machine-model-based-testing.md)
 
 The README stays intentionally general. Detailed learning material belongs in
 the wiki.

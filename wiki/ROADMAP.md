@@ -9,8 +9,8 @@ lesson exposes a useful prerequisite.
 | 2 | Property-based testing | Check general rules over many generated inputs | Complete |
 | 3 | Domain modeling with types | Make invalid states harder or impossible to construct | Complete |
 | 4 | Data and class invariants | Preserve valid state across operations | Complete |
-| 5 | State-machine/model-based testing | Verify sequences of operations | Next |
-| 6 | Exhaustive testing of small domains | Check every input when the domain is bounded | Planned |
+| 5 | State-machine/model-based testing | Verify sequences of operations | Complete |
+| 6 | Exhaustive testing of small domains | Check every input when the domain is bounded | Next |
 | 7 | Static and symbolic analysis | Find paths and counterexamples without hand-written cases | Planned |
 | 8 | Selective SMT solving/model checking | Prove focused properties of critical logic | Planned |
 
