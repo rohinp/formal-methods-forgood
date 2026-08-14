@@ -1,24 +1,22 @@
 package contracts
 
+import contracts.Withdraw.WithdrawalError
+
 class WithdrawSuite extends munit.FunSuite:
   test("withdraws part of a balance"):
-    assertEquals(Withdraw.withdraw(100, 30), 70)
+    assertEquals(Withdraw.withdraw(100, 30), Right(70))
 
   test("may withdraw nothing"):
-    assertEquals(Withdraw.withdraw(100, 0), 100)
+    assertEquals(Withdraw.withdraw(100, 0), Right(100))
 
   test("may withdraw the entire balance"):
-    assertEquals(Withdraw.withdraw(100, 100), 0)
+    assertEquals(Withdraw.withdraw(100, 100), Right(0))
 
   test("rejects a negative balance"):
-    interceptMessage[IllegalArgumentException]("requirement failed: balance must be non-negative"):
-      Withdraw.withdraw(-1, 0)
+    assertEquals(Withdraw.withdraw(-1, 0), Left(WithdrawalError.NegativeBalance))
 
   test("rejects a negative amount"):
-    interceptMessage[IllegalArgumentException]("requirement failed: amount must be non-negative"):
-      Withdraw.withdraw(100, -1)
+    assertEquals(Withdraw.withdraw(100, -1), Left(WithdrawalError.NegativeAmount))
 
   test("rejects an overdraft"):
-    interceptMessage[IllegalArgumentException]("requirement failed: amount must not exceed balance"):
-      Withdraw.withdraw(100, 101)
-
+    assertEquals(Withdraw.withdraw(100, 101), Left(WithdrawalError.AmountExceedsBalance))

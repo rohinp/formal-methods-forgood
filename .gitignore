@@ -27,3 +27,4 @@ project/target/
 .gradle/
 .kotlin/
 kotlin/build/
+kotlin/bin/

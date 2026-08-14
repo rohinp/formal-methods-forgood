@@ -1,14 +1,20 @@
 package contracts
 
 object Withdraw:
-  def withdraw(balance: Int, amount: Int): Int =
-    require(balance >= 0, "balance must be non-negative")
-    require(amount >= 0, "amount must be non-negative")
-    require(amount <= balance, "amount must not exceed balance")
+  enum WithdrawalError:
+    case NegativeBalance
+    case NegativeAmount
+    case AmountExceedsBalance
 
-    val newBalance = balance - amount
+  def withdraw(balance: Int, amount: Int): Either[WithdrawalError, Int] =
+    if balance < 0 then Left(WithdrawalError.NegativeBalance)
+    else if amount < 0 then Left(WithdrawalError.NegativeAmount)
+    else if amount > balance then Left(WithdrawalError.AmountExceedsBalance)
+    else
+      val newBalance = balance - amount
 
-    // `ensuring` checks promises made by the implementation.
-    newBalance.ensuring(_ >= 0, "result must be non-negative")
-      .ensuring(_ == balance - amount, "result must equal balance - amount")
-
+      // A failed postcondition is an implementation defect, not a domain error.
+      Right(
+        newBalance.ensuring(_ >= 0, "result must be non-negative")
+          .ensuring(_ == balance - amount, "result must equal balance - amount")
+      )

@@ -1,43 +1,27 @@
-# Formal Methods Playground
+# Practical Formal Methods
 
-Small, executable examples of practical formal methods in Python, Scala 3, and
-Kotlin.
+A learning repository for applying useful parts of formal methods to everyday
+software development in Python, Scala 3, and Kotlin.
 
-## Lesson 1: contracts
+The goal is not to cover the entire academic field. It is to learn techniques
+that provide practical confidence in application code—especially code generated
+or modified by AI agents—and eventually turn the lessons into an agent skill.
 
-We specify a withdrawal operation as:
+## How this project works
 
-```text
-withdraw(balance, amount) -> new_balance
+- We study one technique at a time.
+- Each technique gets small, executable examples and tests.
+- Implementations follow the conventions of each language rather than forcing
+  them to look identical.
+- We state what each technique guarantees, and what it cannot guarantee.
 
-Preconditions (the caller must provide):
-- balance >= 0
-- amount >= 0
-- amount <= balance
+## Wiki
 
-Postconditions (the implementation must guarantee):
-- new_balance >= 0
-- new_balance == balance - amount
-```
+The [project wiki](wiki/README.md) contains the lessons, terminology, code links,
+external references, and instructions for running the examples.
 
-Run the Python example and tests:
+- [Learning roadmap and progress](wiki/ROADMAP.md)
+- [Lesson 01 — Contracts](wiki/01-contracts.md)
 
-```sh
-python3 -m unittest discover -s python/01_contracts -p 'test_*.py' -v
-```
-
-Run the Scala example and tests:
-
-```sh
-sbt test
-```
-
-Run the Kotlin example and tests:
-
-```sh
-cd kotlin
-./gradlew test
-```
-
-The important idea is not the syntax. A contract turns assumptions and promises
-that might otherwise live only in a programmer's head into executable checks.
+The README stays intentionally general. Detailed learning material belongs in
+the wiki.
