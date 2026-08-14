@@ -36,8 +36,8 @@ Python conventionally reports invalid arguments with exceptions, so the example
 raises `ValueError`. It raises `AssertionError` if its own postcondition fails.
 Type hints describe the intended types but do not enforce them at runtime.
 
-[Implementation](../python/01_contracts/withdraw.py) ·
-[Tests](../python/01_contracts/test_withdraw.py) ·
+[Implementation](../python/src/banking/withdraw.py) ·
+[Tests](../python/tests/contracts/test_withdraw.py) ·
 [Python exceptions](https://docs.python.org/3/tutorial/errors.html)
 
 ### Scala 3
@@ -48,8 +48,8 @@ or a `for` expression without throwing. The postcondition uses `ensuring`: if it
 fails, the implementation itself is defective, so an assertion failure is
 appropriate.
 
-[Implementation](../scala/01_contracts/src/main/scala/Withdraw.scala) ·
-[Tests](../scala/01_contracts/src/test/scala/WithdrawSuite.scala) ·
+[Implementation](../scala/src/main/scala/banking/Withdraw.scala) ·
+[Tests](../scala/src/test/scala/contracts/WithdrawSuite.scala) ·
 [Scala functional error handling](https://docs.scala-lang.org/scala3/book/fp-functional-error-handling.html) ·
 [Scala postconditions](https://docs.scala-lang.org/scala3/reference/contextual/context-functions.html)
 
@@ -61,7 +61,7 @@ compiler's data-flow analysis. Kotlin's `Result` is useful at API boundaries
 that intentionally capture failures, but wrapping every programmer mistake in
 `Result` would make the example less idiomatic.
 
-[Implementation](../kotlin/src/main/kotlin/contracts/Withdraw.kt) ·
+[Implementation](../kotlin/src/main/kotlin/banking/Withdraw.kt) ·
 [Tests](../kotlin/src/test/kotlin/contracts/WithdrawTest.kt) ·
 [Kotlin preconditions](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/require.html) ·
 [Kotlin state checks](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/check.html) ·
@@ -69,15 +69,18 @@ that intentionally capture failures, but wrapping every programmer mistake in
 
 ## Run the examples
 
-From the repository root, run the Python tests:
+From the Python project directory, run all Python tests (after the one-time
+dependency setup in [lesson 2](02-property-based-testing.md#run-the-examples)):
 
 ```sh
-python3 -m unittest discover -s python/01_contracts -p 'test_*.py' -v
+cd python
+PYTHONPATH=src python -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
 Run the Scala tests:
 
 ```sh
+cd scala
 sbt test
 ```
 
@@ -85,7 +88,7 @@ Run the Kotlin tests:
 
 ```sh
 cd kotlin
-./gradlew test
+./gradlew test --rerun
 ```
 
 ## What this lesson guarantees

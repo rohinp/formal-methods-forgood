@@ -1,6 +1,7 @@
 package contracts
 
-import contracts.Withdraw.WithdrawalError
+import banking.Withdraw
+import banking.Withdraw.WithdrawalError
 
 class WithdrawSuite extends munit.FunSuite:
   test("withdraws part of a balance"):

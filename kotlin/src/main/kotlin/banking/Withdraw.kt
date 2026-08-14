@@ -1,4 +1,4 @@
-package contracts
+package banking
 
 fun withdraw(balance: Int, amount: Int): Int {
     require(balance >= 0) { "balance must be non-negative" }
@@ -15,4 +15,3 @@ fun withdraw(balance: Int, amount: Int): Int {
 
     return newBalance
 }
-

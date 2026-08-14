@@ -27,4 +27,3 @@ def withdraw(balance: int, amount: int) -> int:
         raise AssertionError("postcondition failed: result must equal balance - amount")
 
     return new_balance
-

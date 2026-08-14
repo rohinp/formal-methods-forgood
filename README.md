@@ -22,6 +22,7 @@ external references, and instructions for running the examples.
 
 - [Learning roadmap and progress](wiki/ROADMAP.md)
 - [Lesson 01 — Contracts](wiki/01-contracts.md)
+- [Lesson 02 — Property-based testing](wiki/02-property-based-testing.md)
 
 The README stays intentionally general. Detailed learning material belongs in
 the wiki.

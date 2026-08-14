@@ -1,6 +1,6 @@
 import unittest
 
-from withdraw import withdraw
+from banking.withdraw import withdraw
 
 
 class WithdrawContractTest(unittest.TestCase):
@@ -28,4 +28,3 @@ class WithdrawContractTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

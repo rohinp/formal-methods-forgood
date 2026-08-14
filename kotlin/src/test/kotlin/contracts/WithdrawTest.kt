@@ -1,5 +1,6 @@
 package contracts
 
+import banking.withdraw
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
@@ -38,4 +39,3 @@ class WithdrawTest {
         assertEquals("amount must not exceed balance", error.message)
     }
 }
-

@@ -8,6 +8,9 @@ will eventually be used to create an AI coding-agent skill.
   feasible. Document honestly when a language cannot provide the same guarantee.
 - Prefer each ecosystem's normal style; do not force identical syntax or error
   handling across languages.
+- Keep production examples under each language's `src` tree, organized by the
+  example domain. Keep tests under its test tree, organized by formal-method
+  technique (`contracts`, `propertytesting`, and so on).
 - Update `wiki/ROADMAP.md` when progress changes.
 - Add or update one developer-focused wiki page for every implemented technique.
 - Keep `README.md` high-level and link to the wiki for detail.
@@ -15,4 +18,3 @@ will eventually be used to create an AI coding-agent skill.
 - Do not add a formal-methods tool merely to make the list longer. Explain the
   guarantee it adds and the limitations that remain.
 - Keep all examples executable and run their tests after changing them.
-

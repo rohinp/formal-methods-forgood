@@ -1,4 +1,4 @@
-package contracts
+package banking
 
 object Withdraw:
   enum WithdrawalError:

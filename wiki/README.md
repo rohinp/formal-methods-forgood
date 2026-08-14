@@ -8,6 +8,7 @@ focuses on what guarantee a technique buys in ordinary code.
 
 - [Learning roadmap](ROADMAP.md)
 - [01 — Contracts](01-contracts.md)
+- [02 — Property-based testing](02-property-based-testing.md)
 
 Each completed technique should include:
 
@@ -17,3 +18,25 @@ Each completed technique should include:
 4. the idiomatic approach in Python, Scala 3, and Kotlin;
 5. links to executable examples and authoritative references.
 
+## Repository layout
+
+Production examples are grouped by domain; verification code is grouped by
+formal-method technique. The same concepts therefore appear in predictable
+places in every language:
+
+```text
+python/src/banking/                 Python production code
+python/tests/contracts/             Python contract tests
+python/tests/propertytesting/       Python property tests
+
+scala/src/main/scala/banking/       Scala production code
+scala/src/test/scala/contracts/      Scala contract tests
+scala/src/test/scala/propertytesting/
+
+kotlin/src/main/kotlin/banking/     Kotlin production code
+kotlin/src/test/kotlin/contracts/    Kotlin contract tests
+kotlin/src/test/kotlin/propertytesting/
+```
+
+The extra `main/scala`, `test/scala`, `main/kotlin`, and `test/kotlin` levels are
+the conventional JVM build-tool layouts.
