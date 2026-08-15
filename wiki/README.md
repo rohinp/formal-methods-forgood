@@ -12,6 +12,7 @@ focuses on what guarantee a technique buys in ordinary code.
 - [03 — Domain modeling with types](03-domain-modeling-with-types.md)
 - [04 — Data and class invariants](04-data-and-class-invariants.md)
 - [05 — State-machine and model-based testing](05-state-machine-model-based-testing.md)
+- [06 — Exhaustive testing of small domains](06-exhaustive-testing-small-domains.md)
 
 Each completed technique should include:
 
@@ -34,6 +35,7 @@ python/tests/propertytesting/       Python property tests
 python/tests/domainmodeling/         Python domain-model tests
 python/tests/invariants/             Python invariant tests
 python/tests/statemachine/           Python model-based state-machine tests
+python/tests/exhaustive/             Python bounded exhaustive tests
 
 scala/src/main/scala/banking/       Scala production code
 scala/src/test/scala/contracts/      Scala contract tests
@@ -41,6 +43,7 @@ scala/src/test/scala/propertytesting/
 scala/src/test/scala/domainmodeling/
 scala/src/test/scala/invariants/
 scala/src/test/scala/statemachine/
+scala/src/test/scala/exhaustive/
 
 kotlin/src/main/kotlin/banking/     Kotlin production code
 kotlin/src/test/kotlin/contracts/    Kotlin contract tests
@@ -48,6 +51,7 @@ kotlin/src/test/kotlin/propertytesting/
 kotlin/src/test/kotlin/domainmodeling/
 kotlin/src/test/kotlin/invariants/
 kotlin/src/test/kotlin/statemachine/
+kotlin/src/test/kotlin/exhaustive/
 ```
 
 The extra `main/scala`, `test/scala`, `main/kotlin`, and `test/kotlin` levels are
