@@ -13,6 +13,7 @@ focuses on what guarantee a technique buys in ordinary code.
 - [04 — Data and class invariants](04-data-and-class-invariants.md)
 - [05 — State-machine and model-based testing](05-state-machine-model-based-testing.md)
 - [06 — Exhaustive testing of small domains](06-exhaustive-testing-small-domains.md)
+- [07 — Static and symbolic analysis](07-static-and-symbolic-analysis.md)
 
 Each completed technique should include:
 

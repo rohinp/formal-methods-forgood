@@ -1,4 +1,5 @@
 ThisBuild / scalaVersion := "3.7.2"
+ThisBuild / scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked", "-Werror")
 
 lazy val root = project
   .in(file("."))

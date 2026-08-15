@@ -1,6 +1,7 @@
 """Lesson 1: executable preconditions and postconditions."""
 
 from .money import Balance, WithdrawalAmount
+from .verified_arithmetic import calculate_new_balance
 
 
 def withdraw(balance: Balance, amount: WithdrawalAmount) -> Balance:
@@ -13,7 +14,7 @@ def withdraw(balance: Balance, amount: WithdrawalAmount) -> Balance:
     if amount.value > balance.value:
         raise ValueError("amount must not exceed balance")
 
-    new_balance = Balance(balance.value - amount.value)
+    new_balance = Balance(calculate_new_balance(balance.value, amount.value))
 
     # These are implementation promises, not checks on the caller.
     if new_balance.value < 0:

@@ -10,15 +10,7 @@ object Withdraw:
   ): Either[WithdrawalError, Balance] =
     if amount.value > balance.value then Left(WithdrawalError.AmountExceedsBalance)
     else
-      val rawNewBalance = balance.value - amount.value
-
-      // A failed postcondition is an implementation defect, not a domain error.
-      val checked = rawNewBalance
-        .ensuring(_ >= 0, "result must be non-negative")
-        .ensuring(
-          _ == balance.value - amount.value,
-          "result must equal balance - amount"
-        )
+      val checked = VerifiedArithmetic.calculateNewBalance(balance.value, amount.value)
 
       Balance.from(checked) match
         case Right(newBalance) => Right(newBalance)

@@ -1,2 +1,3 @@
 hypothesis==6.160.0
-
+crosshair-tool==0.0.109
+mypy==2.3.0

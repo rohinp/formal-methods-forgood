@@ -11,8 +11,8 @@ lesson exposes a useful prerequisite.
 | 4 | Data and class invariants | Preserve valid state across operations | Complete |
 | 5 | State-machine/model-based testing | Verify sequences of operations | Complete |
 | 6 | Exhaustive testing of small domains | Check every input when the domain is bounded | Complete |
-| 7 | Static and symbolic analysis | Find paths and counterexamples without hand-written cases | Next |
-| 8 | Selective SMT solving/model checking | Prove focused properties of critical logic | Planned |
+| 7 | Static and symbolic analysis | Find paths and counterexamples without hand-written cases | Complete |
+| 8 | Selective SMT solving/model checking | Prove focused properties of critical logic | Next |
 
 “Complete” means the introductory lesson exists in all applicable languages. It
 does not mean the subject has been exhausted.
