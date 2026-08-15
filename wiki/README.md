@@ -14,6 +14,7 @@ focuses on what guarantee a technique buys in ordinary code.
 - [05 — State-machine and model-based testing](05-state-machine-model-based-testing.md)
 - [06 — Exhaustive testing of small domains](06-exhaustive-testing-small-domains.md)
 - [07 — Static and symbolic analysis](07-static-and-symbolic-analysis.md)
+- [08 — Selective SMT solving and model checking](08-selective-smt-solving-model-checking.md)
 
 Each completed technique should include:
 
@@ -37,6 +38,8 @@ python/tests/domainmodeling/         Python domain-model tests
 python/tests/invariants/             Python invariant tests
 python/tests/statemachine/           Python model-based state-machine tests
 python/tests/exhaustive/             Python bounded exhaustive tests
+python/tests/modelchecking/          Python explicit-state model checker
+python/tests/smt/                    Python runner for the shared SMT proof
 
 scala/src/main/scala/banking/       Scala production code
 scala/src/test/scala/contracts/      Scala contract tests
@@ -45,6 +48,7 @@ scala/src/test/scala/domainmodeling/
 scala/src/test/scala/invariants/
 scala/src/test/scala/statemachine/
 scala/src/test/scala/exhaustive/
+scala/src/test/scala/modelchecking/
 
 kotlin/src/main/kotlin/banking/     Kotlin production code
 kotlin/src/test/kotlin/contracts/    Kotlin contract tests
@@ -53,6 +57,9 @@ kotlin/src/test/kotlin/domainmodeling/
 kotlin/src/test/kotlin/invariants/
 kotlin/src/test/kotlin/statemachine/
 kotlin/src/test/kotlin/exhaustive/
+kotlin/src/test/kotlin/modelchecking/
+
+specs/                               Language-neutral formal specifications
 ```
 
 The extra `main/scala`, `test/scala`, `main/kotlin`, and `test/kotlin` levels are

@@ -28,6 +28,7 @@ external references, and instructions for running the examples.
 - [Lesson 05 — State-machine and model-based testing](wiki/05-state-machine-model-based-testing.md)
 - [Lesson 06 — Exhaustive testing of small domains](wiki/06-exhaustive-testing-small-domains.md)
 - [Lesson 07 — Static and symbolic analysis](wiki/07-static-and-symbolic-analysis.md)
+- [Lesson 08 — Selective SMT solving and model checking](wiki/08-selective-smt-solving-model-checking.md)
 
 The README stays intentionally general. Detailed learning material belongs in
 the wiki.
