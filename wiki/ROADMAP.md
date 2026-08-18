@@ -19,9 +19,11 @@ does not mean the subject has been exhausted.
 
 ## Next milestone
 
-The introductory curriculum is complete. The next milestone is to distill these
-lessons into a practical verification policy and, eventually, an AI coding-agent
-skill that selects techniques according to the code's risk and shape.
+The introductory curriculum and initial risk-based coding-agent skill are
+complete. The first integrated example applies selected techniques to
+[semantic and LLM request caching](https://github.com/rohinp/pragmatic-developer-skills/tree/main/example).
+The next milestone is a controlled evaluation that compares agent work with and
+without the skills using the same starting code and acceptance checks.
 
 ## Future experiments
 

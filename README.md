@@ -42,3 +42,13 @@ testing. They will be tried here one technique at a time before any guidance is
 promoted into the skill.
 
 See [future candidates and their promotion criteria](wiki/ROADMAP.md#future-experiments).
+
+## Applied example
+
+The companion skills repository contains a
+[semantic and LLM request caching example](https://github.com/rohinp/pragmatic-developer-skills/tree/main/example)
+in Python, Scala 3, and Kotlin. It combines selected lessons from this
+playground to protect graph structure, bounded traversal, and cache-hit
+behavior while mocking embeddings and the external LLM. The graph-caching idea
+is credited to Manoj's HackerNoon article,
+[“Graph Theory-Based Semantic Caching: Scaling LLM Applications”](https://hackernoon.com/graph-theory-based-semantic-caching-scaling-llm-applications).

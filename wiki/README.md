@@ -24,6 +24,15 @@ Each completed technique should include:
 4. the idiomatic approach in Python, Scala 3, and Kotlin;
 5. links to executable examples and authoritative references.
 
+## Applied examples
+
+- [Semantic and LLM request caching](https://github.com/rohinp/pragmatic-developer-skills/tree/main/example)
+  combines contracts, domain types, graph invariants, property-based testing,
+  and exhaustive testing of a small intent domain across Python, Scala 3, and
+  Kotlin. External embedding and LLM services are deterministic mocks. The
+  example credits and adapts the idea from Manoj's
+  [HackerNoon article](https://hackernoon.com/graph-theory-based-semantic-caching-scaling-llm-applications).
+
 ## Repository layout
 
 Production examples are grouped by domain; verification code is grouped by
