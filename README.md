@@ -32,3 +32,13 @@ external references, and instructions for running the examples.
 
 The README stays intentionally general. Detailed learning material belongs in
 the wiki.
+
+## Future experiments
+
+The completed lessons are the evidence base for the current verification skill.
+Possible later experiments include mutation testing, metamorphic testing,
+differential testing, fuzzing, fault injection, and concurrency/interleaving
+testing. They will be tried here one technique at a time before any guidance is
+promoted into the skill.
+
+See [future candidates and their promotion criteria](wiki/ROADMAP.md#future-experiments).
